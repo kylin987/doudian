@@ -32,6 +32,12 @@ class Container implements \ArrayAccess
      */
     public $register;
 
+    public function offsetExists(mixed $offset): bool
+    {
+        // 方法实现
+        return isset($this->data[$offset]);
+    }
+
     /**
      * @param mixed $offset
      *
@@ -112,10 +118,5 @@ class Container implements \ArrayAccess
         }
 
         return $this->middlewares;
-    }
-
-    public function offsetExists(mixed $offset): bool
-    {
-        // TODO: Implement offsetExists() method.
     }
 }
