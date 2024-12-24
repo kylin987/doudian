@@ -65,7 +65,7 @@ class Container implements \ArrayAccess
         $this->values[$offset] = $value;
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         // TODO: Implement offsetUnset() method.
     }
