@@ -43,7 +43,7 @@ class Container implements \ArrayAccess
      *
      * @return $this|mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         if (isset($this->instances[$offset])) {
             return $this->instances[$offset];
@@ -118,5 +118,10 @@ class Container implements \ArrayAccess
         }
 
         return $this->middlewares;
+    }
+
+    public function offsetExists(mixed $offset): bool
+    {
+        // TODO: Implement offsetExists() method.
     }
 }
